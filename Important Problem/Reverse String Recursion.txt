@@ -1,0 +1,30 @@
+#include "pch.h"
+#include <iostream>
+#include <Stack>
+#include<string>
+using namespace std;
+
+void ReverseString(string &str,int k,int len) {
+	char str1[2];
+	if (k < len) {
+		str1[1] = str[k];
+		str[k] = str[len];
+		str[len] = str1[1];
+		ReverseString(str,k+1,len-1);
+	}
+	
+}
+
+
+// Driver Code  
+int main(void) {
+	string str, str2;
+	getline(cin,str);
+	int len = str.length();
+	ReverseString(str, 0,len-1 );
+	cout << "String is " << endl;
+	cout << str;
+	
+//	ReverseString(str,len);
+
+}

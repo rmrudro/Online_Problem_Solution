@@ -1,0 +1,22 @@
+#include "pch.h"
+#include <iostream>
+#include <Stack>
+
+using namespace std;
+
+
+
+// Driver Code  
+int main() {
+
+	// Addition of linked list 
+	int a = 231;
+	int remainder, reverseinteger = 0;
+	while (a > 0) {
+		remainder = a % 10;
+		a = a / 10;
+		reverseinteger = reverseinteger * 10 + remainder;
+	}
+	cout << reverseinteger << endl;
+	return 0;
+}

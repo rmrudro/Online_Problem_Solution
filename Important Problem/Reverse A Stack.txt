@@ -1,0 +1,62 @@
+// VariousC++project.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include "pch.h"
+#include <iostream>
+#include <queue> 
+#include<stack>
+using namespace std;
+
+// Utility function to print the queue 
+
+void Print(stack <int> &Stack) {
+	while (!Stack.empty())
+	{
+		cout << Stack.top() << ",";
+		Stack.pop();
+	}
+
+}
+
+void ReverseStack(stack<int> &Stack) {
+	queue<int> Queue;
+	while (!Stack.empty())
+	{
+		Queue.push(Stack.top());
+		Stack.pop();
+	}
+	
+	while (!Queue.empty())
+	{
+		Stack.push(Queue.front());
+		Queue.pop();
+	}
+}
+// Driver code 
+int main()
+{
+	stack <int> Stack;
+	Stack.push(10);
+	Stack.push(20);
+	Stack.push(30);
+	Stack.push(40);
+	Stack.push(50);
+	Stack.push(60);
+
+	Print(Stack);
+
+	Stack.push(10);
+	Stack.push(20);
+	Stack.push(30);
+	Stack.push(40);
+	Stack.push(50);
+	Stack.push(60);
+
+	cout << "\n"<<"After Reverse data is "<<endl;
+	ReverseStack(Stack);
+	Print(Stack);
+
+	
+}
+
+

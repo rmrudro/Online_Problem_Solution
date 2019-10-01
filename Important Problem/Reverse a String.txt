@@ -1,0 +1,36 @@
+#include "pch.h"
+#include <iostream>
+#include <Stack>
+#include<string>
+using namespace std;
+
+void ReverseString(string str,int len) {
+	if (str == "\0" || str.empty()) {
+		cout<<"String is Empty"<<endl;
+	}
+	int i = 0;
+	int j = len - 1;
+	char temp[2];
+	while (i<j)
+	{
+		temp[1] = str[i];
+		str[i] = str[j];
+		str[j] = temp[1];
+		i++;
+		j--;
+	}
+	cout << "Reverse String is : " << endl;
+	cout << str;
+		
+}
+
+// Driver Code  
+int main(void) {
+	string str;
+	
+	cout << "Enter the String"<<endl;
+	getline(cin, str);
+	int len = str.length();
+	ReverseString(str,len);
+
+}

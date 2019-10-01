@@ -1,0 +1,32 @@
+#include "pch.h"
+#include <iostream>
+#include <Stack>
+
+using namespace std;
+
+void Reverse(char *c, int n);
+
+void Reverse(char *c, int n) {
+	stack<char> s;
+	for (int i = 0; i < n; i++) {
+		s.push(c[i]);
+	}
+	//cout << s.top() << endl;
+	//cout << n << endl;
+	for (int i = 0; i < n; i++) {
+		c[i] = s.top();
+		s.pop();
+	}
+	cout << "Value is : "<<c << endl;
+}
+
+// Driver Code  
+int main() {
+	
+	char c[51];
+	cout << "Enter The String" << endl;
+	gets_s(c);
+	Reverse(c, strlen(c));
+
+	
+}

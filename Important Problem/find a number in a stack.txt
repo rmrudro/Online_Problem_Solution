@@ -1,0 +1,42 @@
+void findNumber(stack<int> &Stack, int number) {
+	stack<int> temp = Stack;
+	int count = 0;
+	int mynumber  = temp.top();
+	temp.pop();
+	if (mynumber == number) {
+		cout << "Number Found" << endl;
+	}
+	else {
+		while (!temp.empty())
+		{
+			mynumber= temp.top();
+			if (mynumber == number) {
+				count++;
+			}
+			temp.pop();
+		}
+		if (count > 0) {
+			cout << "Number Found" << endl;
+		}
+		else {
+			cout << "Number Not found" << endl;
+		}
+	}
+	
+}
+// Driver code 
+int main(void)
+{
+	stack<int> Stack;
+	int n = 6;
+	int number;
+	for (int i = 0; i < n; i++) {
+		cin >> number;
+		Stack.push(number);
+	}
+	PrintStack(Stack);
+	cout << "/n";
+	findNumber(Stack, 10);
+	
+
+}

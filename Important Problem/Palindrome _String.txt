@@ -1,0 +1,39 @@
+#include "pch.h"
+#include <iostream>
+#include <Stack>
+#include<string>
+using namespace std;
+
+
+
+
+int main()
+{
+
+
+	string text;
+	int begin, middle, end, len = 0;
+
+	getline(cin, text);
+
+	len = text.length();
+
+	end = len - 1;
+	middle = len / 2;
+
+	for (begin = 0; begin < middle; begin++)
+	{
+		if (text[begin] != text[len-begin-1])
+		{
+			printf("Not a palindrome.\n");
+			break;
+		}
+		
+	}
+	if (begin == middle)
+		printf("Palindrome.\n");
+
+	return 0;
+
+
+}

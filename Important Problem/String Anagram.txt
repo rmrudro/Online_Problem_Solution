@@ -1,0 +1,55 @@
+#include "pch.h"
+#include <iostream>
+#include <Stack>
+#include<string>
+using namespace std;
+
+
+void CheckStringAnagram(string str, string str2) {
+	int len1 = str.length();
+	int len2 = str2.length();
+	int found = 0, not_found = 0, len;
+	if (len1 == len2) {
+		len = len1;
+		for (int i = 0; i < len; i++) {
+			found = 0;
+			for (int j = 0; j < len; j++) {
+				if (str[i]==str2[j])
+				{
+					found = 1;
+					break;
+				}
+			}
+			if (found==0)
+			{
+				not_found = 1;
+				break;
+			}
+		}
+		if (not_found == 1) {
+			cout << "String are not Anagram to each other" << endl;
+		}
+		else {
+			cout << "Strings are anagram " << endl;
+		}
+	}
+	else {
+		cout << "Must have same number of cherecters Not Anagram" << endl;
+	}
+}
+
+
+// Driver Code  
+int main(void) {
+	string str, str2;
+	
+	cout << "Enter the String"<<endl;
+	getline(cin, str);
+	cout << "Enter 2nd String" << endl;
+	getline(cin, str2);
+
+	CheckStringAnagram(str,str2);
+	
+//	ReverseString(str,len);
+
+}

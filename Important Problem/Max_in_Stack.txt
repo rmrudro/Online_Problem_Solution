@@ -1,0 +1,46 @@
+// VariousC++project.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include "pch.h"
+#include <iostream>
+#include <queue> 
+#include<stack>
+using namespace std;
+
+// Utility function to print the queue 
+
+int GetMaxValue(stack<int> &Stack) {
+	stack<int> temp = Stack;
+	int maxvalue = temp.top();
+	temp.pop();
+	while (!temp.empty())
+	{
+		
+		if (maxvalue < temp.top()) {
+			maxvalue = temp.top();
+		}
+		temp.pop();
+	}
+	return maxvalue;
+}
+
+// Driver code 
+int main()
+{
+	stack <int> Stack;
+
+	Stack.push(10);
+	Stack.push(70);
+	Stack.push(80);
+	Stack.push(100);
+	Stack.push(30);
+	Stack.push(60);
+
+	int getmaxvalue = GetMaxValue(Stack);
+	
+	cout << "Max Value is : " << getmaxvalue << endl;
+
+	
+}
+
+

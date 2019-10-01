@@ -1,0 +1,31 @@
+#include "pch.h"
+#include <iostream>
+
+#include<stdio.h>
+using namespace std;
+//#define MAX_SIZE 101
+
+void palindrome(int num) {
+	int remainder;
+	int finalnumber=0, no=num;
+	while (num >0)
+	{
+		remainder = num % 10;
+		num = num / 10;
+		finalnumber = finalnumber * 10 + remainder;
+
+	}
+	/*cout << "finalNumber is : " << finalnumber<<endl;
+	cout << "number is : " <<no << endl;*/
+	if (finalnumber == no) {
+		cout << no <<" : NUmber is palindrome" << endl;
+	}
+	else {
+		cout << no << " : NUmber is not Palindrome" << endl;
+	}
+}
+int main() {
+	palindrome(12321);
+	palindrome(1234);
+	return 0;
+}
