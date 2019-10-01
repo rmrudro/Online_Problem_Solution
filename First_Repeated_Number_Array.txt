@@ -1,0 +1,32 @@
+int main(void)
+{
+
+	int arr[] = { 1,2,3,4,5,4,5,3 }; // array
+	int N = sizeof(arr) / sizeof(arr[0]); // size of array
+	int numbermatch = -21;
+	int flag = 0;
+	for (int i = 0; i < N; i++) { // select an element
+		for (int j = i + 1; j < N; j++) { //traverse ahead and check for duplicate
+			if (arr[i] == arr[j])
+			{
+				cout << "First repeating integer is " << arr[i] <<endl;
+				numbermatch = arr[i];
+				flag = 1;
+				break;
+			}
+			
+			
+		}
+		if (flag==1)
+			break;
+	}
+	if (flag == 1) {
+		cout << "Number Found and Number is : " << numbermatch;
+	}
+	else {
+		cout << "Number Not found" << endl;
+	}
+	
+
+	
+}
