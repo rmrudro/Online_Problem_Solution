@@ -1,0 +1,36 @@
+// VariousC++project.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include "pch.h"
+#include <iostream>
+
+#include<stdio.h>
+#include<stdlib.h>
+#define MAX 100
+using namespace  std;
+int i = 0;
+char revstr[MAX];
+char* ReverseString(char str[]) {
+	 
+	if (*str)
+	{
+		ReverseString(str + 1);//calling the function ReverseOfString itself
+		revstr[i++] = *str;
+	}
+	return revstr;
+}
+
+int main() {
+	
+	
+	char str[MAX], *reversestring;
+	cout << "Enter The string" << endl;
+	cin >> str;
+	cout << "\n string is " << str<<endl;
+	reversestring = ReverseString(str);
+	cout << "Reverse String is : " << reversestring;
+}
+
+
+
+

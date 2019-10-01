@@ -1,0 +1,27 @@
+#include "pch.h"
+#include <iostream>
+
+#include<stdio.h>
+#include<stdlib.h>
+#define MAX 100
+using namespace  std;
+
+void NumberSequence(int i,int n) {
+	
+	if (i > n)
+		return;
+	cout << i << " ";
+	NumberSequence(i + 2, n);
+}
+
+int main() {
+	int n;
+	cout << "Enter How Many Number You want" << endl;
+	cin >> n;
+	cout << "Odd Number is " << endl;
+	NumberSequence(1, n);
+	cout << "Even Number is " << endl;
+	NumberSequence(2, n);
+	
+	
+}

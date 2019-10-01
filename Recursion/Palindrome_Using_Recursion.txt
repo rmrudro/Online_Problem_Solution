@@ -1,0 +1,33 @@
+void main()
+{
+	char str[20];
+	int flag = 0, len;
+	cout << "Enter any String" << endl;
+	cin >> str;
+	//l/*en = strlen(str);*/
+	flag = CheckPalindrome(str, 0);
+	if (flag > 0) {
+		cout << "String is Not Palindrome" << endl;
+	}
+	else {
+		cout << "String is  Palindrome" << endl;
+	}
+
+
+}
+int flag = 0;
+int CheckPalindrome(char str[], int index) {
+	 
+	static int len = strlen(str);
+	
+	if (index == len - 1)
+		return flag;
+	if (str[index] == str[len - index - 1]) {
+		CheckPalindrome(str, index + 1);
+	}
+	else {
+		flag = 1;
+		return flag;
+	}
+	return flag;
+}

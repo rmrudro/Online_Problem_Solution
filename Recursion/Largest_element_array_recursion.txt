@@ -1,0 +1,45 @@
+// VariousC++project.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include "pch.h"
+#include <iostream>
+
+#include<stdio.h>
+#include<stdlib.h>
+#define MAX 100
+using namespace  std;
+int sum_digit = 0;
+int ij = 0;
+int maxno = -1;
+int Get_Largest_Element(int arr[],int n) {
+	
+	if (ij < n) {
+		if (maxno < arr[ij]) {
+			maxno = arr[ij];
+		}
+		ij++;
+		Get_Largest_Element(arr, n);
+	}
+	return maxno;
+}
+
+int main() {
+	/* Drive code to test the implementation. */
+	// Printing elements in Queue after each Enqueue or Dequeue 
+	
+	int arr[MAX];
+	int n;
+	cout << "Enter The NUmber of Elements of Array"<<endl;
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		cin >> arr[i];
+	}
+	int getlargest;
+	getlargest = Get_Largest_Element(arr, n);
+	cout << "\n Max Number of array is : " << endl;
+	cout << getlargest;
+}
+
+
+
+

@@ -1,0 +1,38 @@
+// VariousC++project.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include "pch.h"
+#include <iostream>
+
+#include<stdio.h>
+#include<stdlib.h>
+#define MAX 100;
+using namespace  std;
+int sum_digit = 0;
+
+int getdigt(int num) {
+	int remainder;
+	remainder = num % 10;
+	if (num != 0) {
+
+		sum_digit = sum_digit + remainder;
+		getdigt(num / 10);
+	}
+		
+	return sum_digit;
+}
+
+int main() {
+	/* Drive code to test the implementation. */
+	// Printing elements in Queue after each Enqueue or Dequeue 
+	int num, sum_digit;
+	cout << "Enter The Number" << endl;
+	cin >> num;
+	sum_digit = getdigt(num);
+	cout << " The Digit is : " << sum_digit << endl;
+
+}
+
+
+
+

@@ -1,0 +1,43 @@
+// VariousC++project.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include "pch.h"
+#include <iostream>
+
+#include<stdio.h>
+#include<stdlib.h>
+#define MAX 100
+using namespace  std;
+
+
+
+int term;
+int fibonacci(int prNo, int num);
+
+void main()
+{
+	char str[20];
+	int flag = 0, len;
+	cout << "Enter any String" << endl;
+	cin >> str;
+	len = strlen(str);
+	for (int i = 0; i < len; i++) {
+		if (str[i] != str[len - i - 1]) {
+			flag = 1;
+			break;
+		}	
+	}
+	if (flag > 0) {
+		cout << "String Is Not a Palindrome";
+	}
+	else {
+		cout << "String is Palindrome";
+	}
+
+}
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+int term;
+int fibonacci(int prNo, int num);
+
+void main()
+{
+	static int prNo = 0, num = 1;
+	cout << "\n\n Recursion : Print Fibonacci Series :" << endl;
+	cout << "-----------------------------------------" << endl;
+	
+	cout << " Input number of terms for the Series (< 20) : " << endl;
+	cin >> term;
+	
+	cout << " The Series are : " << endl;
+	
+	
+	fibonacci(prNo, num);
+	printf("\n\n");
+}
+
+int fibonacci(int prNo, int num)
+{
+	static int i = 1;
+	int nxtNo;
+
+	if (i == term)
+		return (0);
+	else
+	{
+		nxtNo = prNo + num;
+		prNo = num;
+		num = nxtNo;
+		cout << nxtNo << "  ";
+
+		i++;
+		fibonacci(prNo, num); //recursion, calling the function fibonacci itself
+	}
+	return (0);
+}

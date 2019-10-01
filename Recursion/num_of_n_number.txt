@@ -1,0 +1,23 @@
+int numSum(int n) {
+	static int sum;
+	if (n == 1) {
+		return 1;
+	}
+	else {
+		sum = n + numSum(n - 1);
+	}
+	return sum;
+}
+
+int main() {
+	/* Drive code to test the implementation. */
+	// Printing elements in Queue after each Enqueue or Dequeue 
+	int n;
+	int sum;
+	cout << "Using Recursion Sum Enter how many number you want for sum "<< endl;
+	cin >> n;
+	sum = numSum(n);
+	cout << "\n The sum is  " <<sum << endl;
+	
+
+}

@@ -1,0 +1,28 @@
+#include "pch.h"
+#include <iostream>
+
+#include<stdio.h>
+#include<stdlib.h>
+#define MAX 100;
+using namespace  std;
+int digit = 0;
+int getdigt(int num) {
+	 
+	if (num != 0) {
+		digit++;
+		getdigt(num / 10);
+	}
+		
+	return digit;
+}
+
+int main() {
+	/* Drive code to test the implementation. */
+	// Printing elements in Queue after each Enqueue or Dequeue 
+	int num, digit;
+	cout << "Enter The Number" << endl;
+	cin >> num;
+	digit = getdigt(num);
+	cout << " The Digit is : " << digit << endl;
+
+}
