@@ -1,0 +1,117 @@
+#include "pch.h"
+#include <iostream>
+#include <Stack>
+
+using namespace std;
+
+struct Node {
+	int data;
+	Node *next;
+};
+
+Node *head;
+
+void insertAtTheBegin(int dta) {
+	
+	Node *temp = new Node();
+	temp->data = dta;
+	temp->next = NULL;
+	if (head != NULL)
+		temp->next = head;
+	head = temp;
+
+}
+
+bool isPalin(Node* head) {
+
+	Node* temp = head;
+	stack <int> s;
+	// Push all elements of the list   to the stack  
+	while (temp != NULL) {
+		s.push(temp->data);
+
+		// Move ahead  
+		temp = temp->next;
+	}
+
+	// Iterate in the list again and  
+	// check by popping from the stack 
+	while (head != NULL) {
+
+		// Get the top most element  
+		int i = s.top();
+
+		// Pop the element  
+		s.pop();
+
+		// Check if data is not 
+		// same as popped element  
+		if (head->data != i) {
+			return false;
+		}
+
+		// Move ahead  
+		head = head->next;
+	}
+
+	return true;
+}
+
+void PrintLinkList(Node *head) {
+	Node *temp = head;
+	while (temp!=NULL)
+	{
+		cout << temp->data << ",";
+		temp = temp->next;
+	}
+}
+
+
+bool isPalin2(Node *head) {
+	Node *temp = head;
+	stack<int> Stack;
+
+	while (temp!=NULL)
+	{
+		Stack.push(temp->data);
+		temp = temp->next;
+	}
+
+	Node *temp1 = head;
+	while (temp1!=NULL)
+	{
+		int i = Stack.top();
+		Stack.pop();
+		if (i != temp1->data) {
+			return false;
+		}
+		temp1 = temp1->next;
+	}
+	return true;
+
+}
+// Driver Code  
+int main() {
+	int n, number;
+	cout << "How many Number" << endl;
+	cin >> n;
+	
+	head = NULL;
+	for (int i = 0; i < n; i++) {
+		cin >> number;
+		insertAtTheBegin(number);
+	}
+
+	PrintLinkList(head);
+	cout << "\n" << endl;
+	/*isPalin(head);*/
+	
+	int result= isPalin2(head);
+	if (result == 1) {
+		cout << " Palindrome " << endl;
+	}
+	else {
+		cout << "Not Palindrome" << endl;
+	}
+
+}
